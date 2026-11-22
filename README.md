@@ -4,8 +4,8 @@ Fixes for Xiaomi's **Super Wallpapers** (Mars, Earth, Saturn, Moon) when they ru
 non-Xiaomi phones. They were developed and tested on a Samsung Galaxy S26 Ultra
 (One UI, Android 17).
 
-It works on **Ouxyl's** ports of the wallpapers (the `ALPHA-2.6.56x ... ogl ... fix1`
-builds found on APKMirror). Ouxyl did the hard part of getting these running outside
+It works on **Ouxyl's** ports of the wallpapers: the August 2024 `ALPHA-2.6.56x ... ogl ... fix1`
+builds from APKMirror. Ouxyl did the hard part of getting these running outside
 MIUI. This repo adds the fixes that were still needed on Samsung.
 
 > **No Xiaomi code or assets are included.** You supply the APKs; the patcher only
@@ -26,7 +26,8 @@ and has no day/night scenes. The patcher just re-signs it, so all four share one
 
 ## Supported inputs
 
-The patcher checks the SHA-256 of the input and refuses anything it doesn't know.
+These are the **August 2024** releases of Ouxyl's ports on APKMirror. Other releases may
+differ, and the patcher will refuse them. The patcher checks the SHA-256 of the input and refuses anything it doesn't know.
 Every patch also checks the exact code or bytes it changes.
 
 | Wallpaper | APKMirror build | SHA-256 |
@@ -84,6 +85,14 @@ daynight/src/           our module: superwallpaper.port.daynight.* and superwall
 daynight/stubs/         compile-only stubs for the few Xiaomi/Unity classes we call (never packaged)
 daynight/build.sh       builds daynight/build/classes3.dex
 ```
+
+## Credits
+
+- **Xiaomi**: the Super Wallpapers themselves.
+- **Ouxyl**: the ports that run outside MIUI, which this patcher builds on.
+- **MAGQ1**: this project. Testing on a real device, direction and decisions.
+- **Claude** (Anthropic, via Claude Code): contributor. Reverse-engineered the fixes, wrote the
+  patcher, the day/night and refresh module and the tooling, and verified each change on the device.
 
 ## Notes
 
