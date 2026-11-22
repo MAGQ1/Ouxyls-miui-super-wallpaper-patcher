@@ -1,6 +1,6 @@
 # Ouxyl's MIUI Super Wallpaper patcher
 
-Fixes for Xiaomi's **Super Wallpapers** (Mars, Earth, Saturn, Moon) when they run on
+Fixes for Xiaomi's **Super Wallpapers** (Mars, Earth, Saturn) when they run on
 non-Xiaomi phones. They were developed and tested on a Samsung Galaxy S26 Ultra
 (One UI, Android 17).
 
@@ -21,8 +21,9 @@ MIUI. This repo adds the fixes that were still needed on Samsung.
 | `crashfix` | Crash after a reboot. | Grows a fixed 128-entry table in `libunity.so` (arm64) to 1024 entries. The function is found by its instruction pattern, so it works on both Unity builds involved. | Mars, Earth, Saturn |
 | `daynight` | (Feature) | Adds a **Day & night** settings screen (launcher icon "<Planet> wallpaper"). Modes: follow dark mode, follow sunrise and sunset (with coarse location or typed coordinates), custom times, always day, always night. | Mars, Earth, Saturn |
 
-**Moon needs no patches.** It already contains Xiaomi's unlock fix, doesn't use Unity,
-and has no day/night scenes. The patcher just re-signs it, so all four share one key.
+**Moon doesn't need this patcher.** Ouxyl's Moon port (ALPHA-2.6.563, August 2024) works on
+Samsung as-is: it already contains Xiaomi's unlock fix, doesn't use Unity, and has no day/night
+scenes. Install the original APK.
 
 ## Supported inputs
 
@@ -35,7 +36,6 @@ Every patch also checks the exact code or bytes it changes.
 | Mars | `com.miui.miwallpaper.mars` ALPHA-2.6.561-11211547-ogl-64-fix1 | `ac5a8f0b554aa4bcc5cf83975ec0d1210a84633bcee70a2dc1ba77400d746229` |
 | Earth | `com.miui.miwallpaper.earth` ALPHA-2.6.561-11211547-ogl-64-fix1 | `3eb16b110ca34529f4bae9abcae762b565b2f1ea72f8bcdf649dab7051fd616b` |
 | Saturn | `com.miui.miwallpaper.saturn` ALPHA-2.6.561-11211547-ogl-64-fix1 | `6b2651f25e34e1034d844a575a1213fb5d07b39ac5052c3cc1b7410110c347c9` |
-| Moon | `com.miui.miwallpaper.moon` ALPHA-2.6.563-08071126-ogl-fix1 | `12c942cf16dd914b1486548cdc5d2a9cb5767933b78f0cb9524581485f446fad` |
 
 `--profile <name>` lets you try a known profile on another build at your own risk.
 

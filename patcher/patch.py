@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Patch Xiaomi's Super Wallpapers (Mars, Earth, Saturn, Moon) so they work on non-Xiaomi phones.
+"""Patch Xiaomi's Super Wallpapers (Mars, Earth, Saturn) so they work on non-Xiaomi phones.
+(Moon 2.6.563 needs no changes: it already has the unlock fix and doesn't use Unity.)
 
 Patches (each can be turned off):
   unlock   - also listen for USER_PRESENT (backported from Moon 2.6.563), because
@@ -33,7 +34,6 @@ sys.path.insert(0, HERE)
 import axml  # noqa: E402
 
 SW = "com/miui/miwallpaper/basesuperwallpaper/SuperWallpaper"
-MOON_SW = "com/miui/miwallpaper/moon/superwallpaper/BaseMoonSuperWallpaper"
 
 # Inputs this patcher knows (APKMirror builds, by SHA-256).
 #   cls      - wallpaper base class holding USE_COMMAND_NOTIFICATION (smali path)
@@ -51,13 +51,6 @@ PROFILES = {
     "6b2651f25e34e1034d844a575a1213fb5d07b39ac5052c3cc1b7410110c347c9": dict(
         name="saturn-2.6.561", cls=SW, api=26, patches={"unlock", "daynight", "crashfix", "refresh"},
         process=":saturnSuperWallpaper", label="Saturn wallpaper"),
-    # Moon: needs nothing. It already has Xiaomi's USER_PRESENT unlock fix (the one
-    # we backport); it uses the Filament renderer (no Unity, so no crashfix); and it
-    # has no day/night scenes (its dark-mode callback only schedules a refresh).
-    # The patcher just re-signs it, so all builds share one key.
-    "12c942cf16dd914b1486548cdc5d2a9cb5767933b78f0cb9524581485f446fad": dict(
-        name="moon-2.6.563", cls=MOON_SW, api=28, patches=set(),
-        process=":moonSuperWallpaper", label="Moon wallpaper"),
 }
 
 TOOLS = os.environ.get("TOOLS", os.path.join(ROOT, "work", "tools"))
