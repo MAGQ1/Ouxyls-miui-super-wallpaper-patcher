@@ -90,9 +90,6 @@ daynight/build.sh       builds daynight/build/classes3.dex
 
 - **Xiaomi**: the Super Wallpapers themselves.
 - **Ouxyl**: the ports that run outside MIUI, which this patcher builds on.
-- **MAGQ1**: this project. Testing on a real device, direction and decisions.
-- **Claude** (Anthropic, via Claude Code): contributor. Reverse-engineered the fixes, wrote the
-  patcher, the day/night and refresh module and the tooling, and verified each change on the device.
 
 ## Notes
 
