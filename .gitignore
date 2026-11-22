@@ -1,0 +1,25 @@
+# Xiaomi's APKs and anything built from them: never publish these.
+*.apk
+*.apks
+*.xapk
+*.idsig
+*.dex
+*.so
+out/
+
+# Signing keys and passwords.
+keys/
+*.p12
+*.jks
+*.keystore
+*pass*.txt
+
+# Local toolchain, scratch space and build output.
+work/
+daynight/build/
+__pycache__/
+*.pyc
+
+# Private working notes (contain device details).
+CLAUDE.md
+.claude/
