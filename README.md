@@ -97,4 +97,4 @@ daynight/build.sh       builds daynight/build/classes3.dex
 - Screen-off on Earth and Saturn still begins with the scene's own cut from the
   randomly chosen lock-screen view to the start of its animation. That's how the
   scenes are made; the freeze that made it look like a flash is gone.
-- Tested only on one Samsung phone. Reports from other devices are welcome.
+- Tested only on one Samsung phone.
